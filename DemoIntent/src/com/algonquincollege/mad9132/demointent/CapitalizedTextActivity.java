@@ -22,7 +22,7 @@ public class CapitalizedTextActivity extends Activity implements Constants {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_capitalized_text);
 
-        Button clearButton = (Button) findViewById( R.id.button_capitalized );
+        Button clearButton = (Button) findViewById( R.id.button_plain );
 		clearButton.setOnClickListener( new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -30,7 +30,7 @@ public class CapitalizedTextActivity extends Activity implements Constants {
 			}
 		});
 
-		mCapitalizedText = (EditText) findViewById( R.id.text_capitalized );
+		mCapitalizedText = (EditText) findViewById( R.id.text_plain );
 		// Get the bundle of extras that was sent to this activity
 		Bundle bundle = getIntent().getExtras();
 		if ( bundle != null ) {
