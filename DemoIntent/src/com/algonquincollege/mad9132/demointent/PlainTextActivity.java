@@ -22,6 +22,10 @@ import android.widget.Toast;
  *
  * Navigation: PlainTextActivity --- LONG PRESS ---> CapitalizedTextActivity
  *
+ * TODOs
+ *    I've left some TODOs for you to implement.
+ *    To see the TODOs in Eclipse: Window -> Show Views -> Other -> General -> Tasks
+ *
  * Features:
  *     two (multiple) activities
  *     intent
@@ -39,7 +43,7 @@ import android.widget.Toast;
  *     THEREFORE, I challenge you to implement the other intent to go from CapitalizedTextActivity
  *         back to PlainTextActivity & display the message with all occurrences of the selected
  *         letter in lower-case.
- *     the toast messages should be externalized
+ *     the toast message should be externalized
  *
  * @author Gerald.Hurdle@AlgonquinCollege.com
  *
@@ -106,10 +110,11 @@ public class PlainTextActivity extends Activity implements Constants, OnLongClic
 	@Override
 	public boolean onLongClick(View v) {
 	    String plainText = mPlainText.getText().toString();
-	    if ( plainText.isEmpty() ) {
-			Toast.makeText(getApplicationContext(), "Empty Message!", Toast.LENGTH_LONG).show();
-			return false;
-	    }
+	    // TODO :: prevent the user from capitalizing empty messages!
+	    // IF plainText is empty
+	    // THEN
+	    //     display a toast message: Empty Message!
+	    //     return true
 	    
 	    Intent intent = new Intent( getApplicationContext(), CapitalizedTextActivity.class );
 	    intent.setFlags( Intent.FLAG_ACTIVITY_CLEAR_TOP );
@@ -117,6 +122,6 @@ public class PlainTextActivity extends Activity implements Constants, OnLongClic
 	    intent.putExtra( THE_LETTER, mLetter );
 	    startActivity( intent );
 	    
-	    return false;
+	    return true;
 	}
 }
